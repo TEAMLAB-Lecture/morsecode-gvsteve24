@@ -133,9 +133,9 @@ def is_validated_morse_code(user_input):
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당 또는 필요에 따라 자유로운 수정
     result = True
     morse_code = get_morse_code_dict()
-    user_code_list = user_input.split(' ')
+    user_code_list = user_input.split()
     for code in user_code_list:
-        if any( char != '-' and char != '.' and char != ' ' for char in code ):
+        if any( char != '-' and char != '.' for char in code ):
             return False
 
     for code in user_code_list:
